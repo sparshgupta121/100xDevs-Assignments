@@ -8,10 +8,13 @@ export function Assignment2() {
     const [inputText, setInputText] = useState('');
 
     // Your code starts here
-    function showAlert() {
+    const showAlert= useCallback(function showAlert() {
+
+        alert(inputText);
+        
 
     }
-    // Your code ends here
+    ,[inputText]) 
 
     return (
         <div>
@@ -21,6 +24,9 @@ export function Assignment2() {
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder="Enter some text"
             />
+
+            <br /><br /><br />
+            
             <Alert showAlert={showAlert} />
         </div>
     );
